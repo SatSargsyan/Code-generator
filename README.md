@@ -2,9 +2,9 @@
 
 <h3>The value in a const variable is what's called a "compile-time" value, and is immutable (which means it does not change over 
 the life of the program).
-
+<p>
 [Only **primitive or "built-in" C# types** (e.g. int, string, double) are allowed to be declared const. 
-Therefore, we ** cannot write **either of these:</h3>](https://www.exceptionnotfound.net/const-vs-static-vs-readonly-in-c-sharp-applications/)
+Therefore, we ** cannot write **either of these:</h3>](https://www.exceptionnotfound.net/const-vs-static-vs-readonly-in-c-sharp-applications/)</p>
 ```C#
 public const DateTime DeclarationOfIndependence = new DateTime(1776,7,4);  
 public const MyClass MyValue = new Class() {Name = "TestName"};
