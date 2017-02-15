@@ -56,8 +56,43 @@ public const DateTime dt = DateTime.Today;  //throws compilation error
 public const string Name = string.Empty;    //throws compilation error
 public static readonly string Name = string.Empty; //No error, legal
 ```
-<h4>readonly can be declared as static, but not necessary. No need to initialize at the time of declaration. 
-Its value can be assigned or changed using constructor once. So there is a possibility to change value of readonly field 
-once (does not matter, if it is static or not), which is not possible with const.</h4>
+<h4>readonly can be declared as static. Its value can be assigned or changed using constructor once, but if it isn't static We  can 
+use <b>many constructors, wheras if it static, only one constructor.</b></h4>
+```C#
+ public class Test
+        {
+            public readonly int rdOnly = 3;
+            public Test(int rdVal)
+            {
+                rdOnly = rdVal;
+                Console.WriteLine(rdOnly);
+            }
+
+            public Test()
+            {
+                rdOnly = 5;
+                Console.WriteLine(rdOnly);
+            }
+
+            public Test(string s)
+            {
+                Console.WriteLine(s);
+                Console.WriteLine(rdOnly);
+            }
+            ```
+            <h2>wherefore</h2>
+            ```C#
+             public static class Test1
+            {
+                public static readonly int rdOnly1 = 3;
+                
+                static Test1()
+                {
+                    rdOnly1 = 15;
+                    Console.WriteLine(rdOnly1);
+                }
+                ```
+                <h2>because static class can has only one constructor, and
+                1. it must be<b> parameterless</b>, 2.it <b> cannot be public</b></h2>
 
 
