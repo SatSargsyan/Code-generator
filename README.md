@@ -29,10 +29,8 @@ public class TestClass
     }
 }
 ```
-<h2>his means that a readonly variable can have different values for different constructors in the same class</h2>
 
-
-
+<h2> his means that a readonly variable can have different values for different constructors in the same class</h2>
 
 
 <h4>The readonly keyword is different from the const keyword. A const field can only be initialized at the declaration of the field.
@@ -56,8 +54,75 @@ public const DateTime dt = DateTime.Today;  //throws compilation error
 public const string Name = string.Empty;    //throws compilation error
 public static readonly string Name = string.Empty; //No error, legal
 ```
-<h4>readonly can be declared as static, but not necessary. No need to initialize at the time of declaration. 
-Its value can be assigned or changed using constructor once. So there is a possibility to change value of readonly field 
-once (does not matter, if it is static or not), which is not possible with const.</h4>
+<h4>readonly can be declared as static. Its value can be assigned or changed using constructor once, but if it isn't static We  can 
+use <b>many constructors, wheras if it static, only one constructor.</b></h4>
+```C#
+ public class Test
+        {
+            public readonly int rdOnly = 3;
+            public Test(int rdVal)
+            {
+                rdOnly = rdVal;
+                Console.WriteLine(rdOnly);
+            }
+
+            public Test()
+            {
+                rdOnly = 5;
+                Console.WriteLine(rdOnly);
+            }
+
+            public Test(string s)
+            {
+                Console.WriteLine(s);
+                Console.WriteLine(rdOnly);
+            }
+            ```
+            
+            <h2>wherefore</h2>
+            
+            ```C#
+             public static class Test1
+            {
+                public static readonly int rdOnly1 = 3;
+                
+                static Test1()
+                {
+                    rdOnly1 = 15;
+                    Console.WriteLine(rdOnly1);
+                }
+                ```
+                <h2>because static class can has only one constructor, and
+                1. it must be<b> parameterless</b>, 2.it <b> cannot be public</b></h2>
+                
+                
+                <h2>There are situations where a const and a non-const have different semantics. For example:</h2>
+                
+                ```C#
+                const int y = 42;
+                static void Main(string[] args)
+        { 
+                     
+            short x = 42;
+            Console.WriteLine(x.Equals(y));
+            }
+            ```
+            <h2>is true, wherfore</h2>
+            ```C#
+            static readonly int z = 45;
+             static void Main(string[] args)
+        {
+                     
+            short t = 45;
+            Console.WriteLine(t.Equals(z));
+           
+
+            Console.ReadKey();
+        }
+        ```
+        <h2>is false</h2>
+            
+       
+                
 
 
