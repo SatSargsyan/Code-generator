@@ -94,5 +94,35 @@ use <b>many constructors, wheras if it static, only one constructor.</b></h4>
                 ```
                 <h2>because static class can has only one constructor, and
                 1. it must be<b> parameterless</b>, 2.it <b> cannot be public</b></h2>
+                
+                
+                <h2>There are situations where a const and a non-const have different semantics. For example:</h2>
+                
+                ```C#
+                const int y = 42;
+                static void Main(string[] args)
+        { 
+                     
+            short x = 42;
+            Console.WriteLine(x.Equals(y));
+            }
+            ```
+            <h2>is true, wherfore</h2>
+            ```C#
+            static readonly int z = 45;
+             static void Main(string[] args)
+        {
+                     
+            short t = 45;
+            Console.WriteLine(t.Equals(z));
+           
+
+            Console.ReadKey();
+        }
+        ```
+        <h2>is false</h2>
+            
+       
+                
 
 
