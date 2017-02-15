@@ -29,10 +29,8 @@ public class TestClass
     }
 }
 ```
-<h2>his means that a readonly variable can have different values for different constructors in the same class</h2>
 
-
-
+<h2> his means that a readonly variable can have different values for different constructors in the same class</h2>
 
 
 <h4>The readonly keyword is different from the const keyword. A const field can only be initialized at the declaration of the field.
@@ -80,7 +78,9 @@ use <b>many constructors, wheras if it static, only one constructor.</b></h4>
                 Console.WriteLine(rdOnly);
             }
             ```
+            
             <h2>wherefore</h2>
+            
             ```C#
              public static class Test1
             {
