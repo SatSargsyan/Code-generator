@@ -131,7 +131,23 @@ use <b>many constructors, wheras if it static, only one constructor.</b></h4>
             Console.ReadKey();
             }
  ```
- <h2>is false</h2>
+ <h2>is false, <a href=https://referencesource.microsoft.com/#mscorlib/system/int32.cs,225942ed7b7a3252>because method equals is true, only it passes int parameter</a></h2>
+ 
+ ```C#
+  public override bool Equals(Object obj) {
+            if (!(obj is Int32)) {
+                return false;
+            }
+            return m_value == ((Int32)obj).m_value;
+        }
+ 
+        [System.Runtime.Versioning.NonVersionable]
+        public bool Equals(Int32 obj)
+        {
+            return m_value == obj;
+        }
+        
+```
             
        
                 
