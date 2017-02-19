@@ -125,7 +125,7 @@ use <b>many constructors, wheras if it static, only one constructor.</b></h4>
                      
             short t = 45;
             Console.WriteLine(t.Equals(z));  //false
-            Console.WriteLine(Z.Equals(t));  //true
+            Console.WriteLine(z.Equals(t));  //true, because the first  parameter is type of <int>
            
 
             Console.ReadKey();
