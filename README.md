@@ -107,27 +107,29 @@ use <b>many constructors, wheras if it static, only one constructor.</b></h4>
 <h2>There are situations where a const and a non-const have different semantics. For example:</h2>
                 
 ```C#
-                const int y = 42;
-                static void Main(string[] args)
-        { 
+            const int y = 42;
+            static void Main(string[] args)
+            { 
                      
             short x = 42;
             Console.WriteLine(x.Equals(y));
+            Console.WriteLine(y.Equals(x));
             }
 ```
- <h2>is true, wherfore</h2>
+ <h2>is true(because const as a string, doesn't create new element), wherfore</h2>
  
 ```C#
             static readonly int z = 45;
-             static void Main(string[] args)
-        {
+            static void Main(string[] args)
+            {
                      
             short t = 45;
-            Console.WriteLine(t.Equals(z));
+            Console.WriteLine(t.Equals(z));  //false
+            Console.WriteLine(Z.Equals(t));  //true
            
 
             Console.ReadKey();
-        }
+            }
  ```
  <h2>is false</h2>
             
