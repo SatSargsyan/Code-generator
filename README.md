@@ -32,7 +32,7 @@ public class TestClass
 
 ```
 
-## his means that a readonly variable can have different values for different constructors in the same class</h2>
+## This means that a readonly variable can have different values for different constructors in the same class</h2>
 
 
 #### The readonly keyword is different from the const keyword. A const field can only be initialized at the declaration of the field.
